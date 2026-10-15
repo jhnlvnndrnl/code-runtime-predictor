@@ -242,5 +242,3 @@ Avoid claiming that the model can predict the runtime of *any* program. A more d
 ### Important dataset requirement
 
 The proposed source is [Facebook's BigOBench dataset on Hugging Face](https://huggingface.co/datasets/facebook/BigOBench).
-
-Before committing to it, check its fields and contents. A dataset containing only source code or Big-O labels, without actual measured execution times, cannot directly train a model to predict runtime in seconds. You need measured runtime labels or a reliable process for running programs and collecting their execution times.
