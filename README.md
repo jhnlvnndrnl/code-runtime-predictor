@@ -244,38 +244,3 @@ Avoid claiming that the model can predict the runtime of *any* program. A more d
 The proposed source is [Facebook's BigOBench dataset on Hugging Face](https://huggingface.co/datasets/facebook/BigOBench).
 
 Before committing to it, check its fields and contents. A dataset containing only source code or Big-O labels, without actual measured execution times, cannot directly train a model to predict runtime in seconds. You need measured runtime labels or a reliable process for running programs and collecting their execution times.
-
----
-
-## 8. What You Could Build
-
-A manageable first version could include:
-
-1. **Prepared dataset:** A CSV file containing code metrics and measured execution times.
-2. **Python training script:** Use pandas to prepare data and scikit-learn to train a Linear Regression model.
-3. **Evaluation report:** Compare predicted versus actual runtimes and report MAE, RMSE, and R².
-4. **Optional interface:** Let users enter code metrics and view the estimated runtime after the model has been trained.
-
-A web interface is optional. The main requirement is a properly trained and evaluated regression model.
-
----
-
-## 9. Concise Project Explanation
-
-> Our project aims to predict software execution time using machine learning. We will extract measurable characteristics from source code, such as lines of code and cyclomatic complexity, and may include time complexity and input size when these can be determined reliably.
->
-> We will train a Linear Regression model using programs with known execution times so it can learn relationships between these features and actual runtime. Then we will test whether it can estimate the execution time of unseen programs.
->
-> The purpose is to investigate whether code metrics can help developers estimate software performance before execution and make more informed decisions about testing and optimization. We will evaluate the model using prediction-error metrics to determine how accurate and useful it is.
-
----
-
-## 10. Key Takeaways
-
-1. **Problem:** Estimating software execution time is difficult without running a program under specific conditions.
-2. **Approach:** Use machine learning to learn the relationship between code metrics and measured runtime.
-3. **Algorithm:** Linear Regression predicts a numerical value, so this is a regression problem.
-4. **Data:** You need suitable input features and actual execution-time measurements as labels.
-5. **Evaluation:** Test on unseen examples and report prediction errors to determine whether the model is useful.
-
-**The most important point:** The project is not trying to prove that complex code always runs slowly. It tests whether measurable characteristics of code can predict runtime accurately enough to be useful.
